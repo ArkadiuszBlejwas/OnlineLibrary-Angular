@@ -1,0 +1,11 @@
+<h3>Recently borrowed books</h3>
+
+<a class="recently-borrowed-book" style="max-width: 20rem;" *ngFor="let book of books$ | async"
+   routerLink='/book/{{book.isbn}}'>
+  <img src={{book.cover}}/>
+  <div>
+    <h4>{{book.title}}</h4>
+    <div>{{book.author}}</div>
+    <div>{{ book.borrowDate | date:'medium' }}</div>
+  </div>
+</a>

@@ -1,0 +1,14 @@
+{
+    "breadcrumbs.enabled": true,
+    "search.exclude": {
+        "**/dist": true
+    },
+    "telemetry.enableTelemetry": false,
+    "update.showReleaseNotes": false,
+    "telemetry.enableCrashReporter": false,
+    "prettier.singleQuote": true,
+    "prettier.printWidth": 140,
+    "prettier.trailingComma": "es5",
+    "tslint.configFile": "tslint.json",
+    "tslint.nodePath": "./node_modules"
+}

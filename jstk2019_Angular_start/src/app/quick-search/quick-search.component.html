@@ -1,0 +1,13 @@
+<div id="search-component">
+   
+    <input #searchBox id="search-box" placeholder="Enter your query..." />
+
+    <ul class="search-result" *ngIf="searchBox.value">
+      <li *ngFor="let book of books$ | async">
+        <a routerLink="/book//{{book.isbn}}">
+          {{book.title}}
+        </a>
+      </li>
+    </ul>
+  </div>
+

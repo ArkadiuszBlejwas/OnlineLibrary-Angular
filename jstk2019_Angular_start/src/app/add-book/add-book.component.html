@@ -1,0 +1,84 @@
+<div class="ml-5">
+  <form [formGroup]="checkIsbn" (ngSubmit)="onSubmitIsbn(checkIsbn.value)">
+    Enter ISBN number:<br/>
+    <div class="form-row">
+      <div class="col input-isbn">
+        <label class="mr-3">
+          <input type="text" formControlName="isbn" placeholder="ISBN"/>
+        </label>
+        <button type="submit" [disabled]="checkIsbn.invalid">Next</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="showAddBookForm" class="ml-5">
+  <form [formGroup]="addBook" (ngSubmit)="onSubmitAddBook(addBook.value)">
+    <div class="main-row">
+      <div class="first-col">
+        Search:<br/>
+        <div class="form-row">
+          <div class="col input-field">
+            <label>
+              <input type="text" formControlName="title" value="{{ existingBook?.title }}" [readonly]="readonly"
+                     placeholder="Title"/>
+            </label>
+          </div>
+          <div class="col input-field">
+            <label>
+              <input type="text" formControlName="author" value="{{ existingBook?.author }}" [readonly]="readonly"
+                     placeholder="Author"/>
+            </label>
+          </div>
+          <div class="col input-field">
+            <label>
+              <input type="date" formControlName="releaseDate" value="{{ existingBook?.releaseDate }}"
+                     [readonly]="readonly"
+                     placeholder="Date of release"/>
+            </label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col input-field">
+            <label>
+              <input type="text" formControlName="publishingHouse" value="{{ existingBook?.publishingHouse }}"
+                     [readonly]="readonly" placeholder="Publishing House"/>
+            </label>
+          </div>
+          <div class="col input-field">
+            <label>
+              <input type="text" formControlName="description" value="{{ existingBook?.description }}"
+                     [readonly]="readonly"
+                     placeholder="Description"/>
+            </label>
+          </div>
+          <div class="col input-field">
+            <label>
+              <input #coverBook type="text" formControlName="cover" value="{{ existingBook?.cover }}" [readonly]="readonly"
+                     placeholder="Cover"/>
+            </label>
+          </div>
+        </div>
+        <div class="form-row input-field">
+          <div class="col category-field"  *ngIf="existingBook">
+            <label>
+              <input type="text" value="{{ existingBook?.category }}" [readonly]="readonly" placeholder="Category"/>
+            </label>
+          </div>
+          <div class="col input-field" *ngIf="!existingBook">
+            <select formControlName="category" class="form-control search-slt" [selectedIndex]="0">
+              <option *ngFor="let category of categories()">{{ category }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="second-col">
+          <div class="col">
+            <img class="card-image" [src]="coverBook.value">
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" [disabled]="addBook.invalid && !readonly">Add book</button>
+  </form>
+  <br>
+</div>

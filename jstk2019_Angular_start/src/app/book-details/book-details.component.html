@@ -1,0 +1,54 @@
+
+<div class="container w-50 book-details" *ngIf="book | async as book">
+
+  <div *ngIf='borrowedBooks | async as borrowedBooks'>
+    <div class="card-group" *ngIf='books | async as books'>
+      <div class="card" *ngIf="availableBooks | async as availableBooks">
+        <img class="card-image mt-5" [src]="book.cover"/>
+        <div class="card-body h-auto">
+          <h5 class="card-title" style="text-align: center">{{ book.title }}</h5>
+        </div>
+        <ul class="list-group list-group-flush" >
+          <li class="list-group-item">Author: {{ book.author }}</li>
+
+          <li class="list-group-item">Category: {{ book.category }}</li>
+
+          <li class="list-group-item">Description: {{ book.description }}</li>
+
+          <li class="list-group-item">Publishing House: {{ book.publishingHouse }}</li>
+
+          <li class="list-group-item">Release date: {{ book.releaseDate }}</li>
+
+          <li class="list-group-item">ISBN: {{ book.isbn }}</li>
+
+          <li class="list-group-item" >Available books: {{ availableBooks.length }} / {{ books.length }}  </li>
+        </ul>
+        <div class="card-body mx-auto" id="buttons">
+
+          <a *ngIf='availableBooks.length > 0 ' class="btn btn-primary mx-3" routerLink="/borrow-book/{{book.isbn}}">Borrow</a>
+
+          <a *ngIf='borrowedBooks.length > 0 ' class="btn btn-primary mx-3" routerLink="/return-book/{{book.isbn}}">Return</a>
+
+          <a class="btn btn-primary mx-3" (click)="goBack()">Back</a>
+
+        </div>
+      </div>
+
+    </div>
+    <table class="table mb-3">
+      <thead>
+      <tr>
+        <th scope="col">Borrow date:</th>
+        <th scope="col">Return date:</th>
+        <th scope="col">Email of current user:</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let book of borrowedBooks">
+      <tr>
+        <td>{{ book.borrowDate | date: 'medium' }}</td>
+        <td>{{ book.returnDate | date: 'medium' }}</td>
+        <td>{{ book.email }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,17 @@
+<div >
+  <form [formGroup]="borrowBook" (ngSubmit)="onSubmit(borrowBook.value)">
+
+    <div id="rentBookLabels">
+      <label>
+        Email: <input type="text" formControlName="email" placeholder="Email">
+      </label>
+      <label>
+        Return date: <input type="date" formControlName="returnDate" value="{{ getDefaultReturnDate() }}" min="{{ getActualDate() }}">
+      </label>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="borrowBook.invalid">Borrow</button>
+
+  </form>
+  <br>
+</div>

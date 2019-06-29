@@ -1,0 +1,14 @@
+router-outlet {
+  display: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  max-width: 1500px;
+  padding: 20px;
+}
+
+jstk-recently-borrowed-books {
+  padding: 0 10px;
+}

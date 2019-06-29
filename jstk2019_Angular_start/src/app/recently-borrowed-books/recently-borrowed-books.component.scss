@@ -1,0 +1,17 @@
+
+.recently-borrowed-book {
+  display: flex;
+  margin-bottom: 20px;
+
+  img {
+    max-width: 100%;
+    flex-basis: 50%;
+    width: 50%;
+    margin-right: 20px;
+  }
+
+  h4 {
+    font-size: 17px;
+  }
+}
+

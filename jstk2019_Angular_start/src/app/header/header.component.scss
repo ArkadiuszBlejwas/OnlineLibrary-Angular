@@ -1,0 +1,18 @@
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+li.nav-item.dropdown {
+  color: transparent;
+  top: -10px;
+  right: -170px;
+}
+
+.nav-link {
+  color: white;
+}
+
+jstk-quick-search {
+  position: relative;
+  left: -150px;
+}

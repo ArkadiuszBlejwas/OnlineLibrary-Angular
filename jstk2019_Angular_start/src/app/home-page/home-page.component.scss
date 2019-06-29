@@ -1,0 +1,58 @@
+.container-all-books {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  .card {
+    margin: 20px;
+
+  }
+
+  .card-container {
+    width: 300px;
+    height: 350px;
+  }
+
+  .card-title {
+    margin: 0;
+    min-height: 80px;
+    padding: 5px;
+  }
+}
+
+.input-field {
+  width: 200px;
+
+  label,
+  input {
+    width: 100%;
+  }
+
+  input {
+    padding: 5px 10px;
+    height: 35px;
+  }
+
+}
+
+.card-links {
+  display: flex;
+  justify-content: space-around;
+
+  a {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    background-color: white;
+    color: black;
+
+    &:hover {
+      background-color: antiquewhite;
+    }
+  }
+}
+
+

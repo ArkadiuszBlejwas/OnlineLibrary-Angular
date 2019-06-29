@@ -1,0 +1,36 @@
+.input-field {
+  width: 200px;
+
+  label,
+  input {
+    width: 100%;
+  }
+
+  input {
+    padding: 5px 10px;
+    height: 35px;
+  }
+
+}
+
+.input-isbn {
+  width: 200px;
+
+  label,
+  input {
+    width: 340px;
+  }
+
+  input {
+    padding: 5px 10px;
+    height: 35px;
+  }
+}
+
+.category-field {
+  width: 340px;
+}
+.card-image {
+  width: 150px;
+  height: 220px;
+}

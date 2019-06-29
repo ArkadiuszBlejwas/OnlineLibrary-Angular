@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between">
+  
+  <img src="https://ui-ex.com/images/book-transparent-black-and-white-6.png" width="4%">
+
+  <jstk-quick-search></jstk-quick-search>
+
+  <h3 class="nav-item">
+    Mobile library
+  </h3>
+
+  <li class="nav-item dropdown">
+    <button type="button" class="button-header btn btn-info nav-link">Categories</button>
+      <div class="dropdown-menu dropdown-content" x-placement="bottom-start">
+          <a *ngFor="let category of categories()" class="dropdown-item" [routerLink]="['/books', category]">{{category}}</a>
+          <div class="dropdown-divider ">{{ category }}</div>
+          <a class="dropdown-item" [routerLink]="['/']">All categories</a>
+      </div>
+  </li>
+
+  <a class="button-header nav-item btn btn-info" [routerLink]="['/add']">
+      Add book
+  </a>
+
+</nav>
